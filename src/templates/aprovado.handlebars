@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTÃO SYSPROCARD</title>
+	<style>
+
+
+        .base {
+            background-color: rgb(236, 235, 235);
+            width: 80%;
+            height: 25%;
+            /*margin-left: 10%;*/
+            display: flex;
+            max-width: 650px;
+        }
+
+        .base img{
+            height: auto;
+            width: 650px;
+            position: relative;
+            display: flex;
+            max-width: 650px;
+            
+        }
+
+
+        .hh3{
+            color: rgb(145, 135, 0);    
+            position: relative;
+            margin-top: 22%;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40;
+            margin-left: 80px;
+            
+        }
+
+        .gradient-colors {
+            width: 80%;
+            /*margin-left: 10%;*/
+            padding: 0;
+            display: flex;
+            max-width: 650px;
+        }
+
+        .gradient-colors > div {
+            width: calc(130% / 3);
+            height: 10px;
+        }
+
+
+        .gradient-colors >.first {
+            background-color: #FF1414;
+            background: linear-gradient(90deg, #FF1414 0%, rgba(219, 255, 0, 0.37) 100%);
+        }
+        .gradient-colors > .second {
+            background-color: rgba(255, 92, 0, 0.74);
+            background: linear-gradient(270deg, rgba(255, 92, 0, 0.74) 0%, rgba(219, 255, 0, 0.44) 100%);
+        }
+        .gradient-colors > .third {
+            background-color: rgba(66, 255, 0, 0.17);
+            background: linear-gradient(90deg, rgba(255, 92, 0, 0.74) 4.17%, rgba(66, 255, 0, 0.17) 40.1%, rgba(0, 163, 255, 0.63) 100%);
+        }
+
+        .primeiro h2 {
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .primeiro h3 {
+            padding-left: 13%;
+            margin-top: 5%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .prim p {
+            padding-left: 13%;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sec p {
+            padding-left: 13%;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .terc h3 {
+            padding-left: 13%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20;
+        }
+
+        
+    
+        
+        .face {
+            height: 35px;
+            width: 35px;
+            display: flex;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        .face img{
+            height: 35px;
+            width: 35px;
+        }
+
+        .insta {
+            display: flex;
+            height: 35px;
+            width: 55px;
+            padding: 5px;
+            margin-left: 10px;
+            
+        }
+
+        .insta img{
+            height: 35px;
+            width: 35px;
+        }
+
+        .mail img{
+            height: 35px;
+            width: 35px;
+        }
+
+        .rodape img{
+            /*margin-left: 10%;*/
+            height: auto;
+            width: 450px;
+            max-width: 450px;
+        }
+
+
+        .mail {
+            gap: 10px;
+            display: flex;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        .mail p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25;
+            margin-left: 10px;
+        }
+        
+        .zap {
+            gap: 10px;
+            display: flex;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .zap p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25;
+            margin-left: 10px;
+        }
+        .zap img{
+            height: 35px;
+            width: 35px;
+        }
+
+        .app {
+            margin-left: 20px;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <container>
+        <row>
+            <div class="base">
+                <!--<img src="https://online.sysprocard.com.br/Images/emails/logo.png"> -->
+                <img src="https://online.sysprocard.com.br/Images/emails/cabecalho.png">
+                <!-- <div class="hh3"> <h3>Cadastro Aprovado</h3>  </div> -->
+                      
+            </div>
+
+            <div class="gradient-colors"> 
+                <div class="first"></div>
+                <div class="second"></div>
+                <div class="third"></div>
+            </div>
+
+            <columns class="primeiro"> 
+                <h2> Parabéns, {{nome}} </h2> 
+                <h3> Seu cartão Syspro foi aprovado. </h3> 
+            </columns>
+
+            <br></br>
+
+            <columns class="prim">
+
+                <p> Em breve seu cartão será entregue em seu endereço.</p>
+                <p> O prazo para a entrega é de aproximadamente 15 dias úteis </p>
+
+            </columns>
+
+            <br></br>
+
+            <columns class="sec">
+                <p>Agradecemos por escolher a SYSPRO!</p>
+            </columns>
+
+            <columns class="sec">
+                <p>Tem alguma dúvida? Entre em contato conosco pelo chat do app ou ligue (16) 2103-0090.</p>
+            </columns>
+
+            <br></br>
+
+            <columns class="terc">
+                <h3>Abraços,</h3>
+                <h3>Equipe Syspro</h3>
+            </columns>
+
+        </row>
+
+        <row>
+            <div class="zap">
+                <img src="https://online.sysprocard.com.br/Images/emails/whatsapp.png"></img>
+                <p>(16) 2103-0090</p>
+            </div>
+
+            <div class="mail">
+                <img src="https://online.sysprocard.com.br/Images/emails/email.png"> </img>
+                <p>Atendimento@sysprocard.com.br</p>
+            </div>
+
+           <!-- <div class="face">
+                
+                <a href="https://www.facebook.com/SysproCard"> 
+                <img src="/assets/facebook.png" alt="facebook" > </img>
+                
+       
+            </div> -->
+
+
+           <!-- <div class="insta">
+                <a href="https://www.instagram.com/sysprocard/">
+                <img src="/assets/instagram.png" alt="instagram"> </img>
+                <P>INSTAGRAM</P>
+                
+            </div> -->
+
+
+        </row>
+        
+        <div class="app">
+            <h4>Assim que receber seu cartão baixe o nosso aplicativo e conheça os seus benefícios e vantagens! </h4>
+        </div>
+
+        <div class="rodape">
+            <img src="https://online.sysprocard.com.br/Images/emails/code.png">
+        </div>
+    </container>
+
+</body>
+</html>

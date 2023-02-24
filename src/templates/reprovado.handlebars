@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE</title>
+	<style>
+
+        .master{
+            width: 750px;
+            height: auto;
+            background-color: rgb(243, 243, 243);
+            
+        }
+        .logo{
+            height: 100px;
+            width: 750px;
+            background-color: rgb(243, 243, 243);
+        }
+        .logo img{
+            height: 100px;
+            width: auto;
+            max-width: 750px;
+            display: flex;
+            margin-left: 280px;
+            padding: 24px;
+        }
+
+        .cabecalho{
+            height: 70px;
+            width: 750px;
+            background-color: rgb(243, 243, 243);
+        }
+        .cabecalho h2{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            margin-left: 35%;
+            padding-top: 3%;
+            color: #757575;
+        }
+
+        .hh3{
+            color: rgb(145, 135, 0);    
+            position: relative;
+            margin-top: 22%;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40;
+            margin-left: 80px;
+            
+        }
+
+
+        .gradient-colors {
+            width: 100%;
+            /*margin-left: 10%;*/
+            padding: 0;
+            display: flex;
+            max-width: 750px;
+        }
+
+        .gradient-colors > div {
+            width: calc(100% / 3);
+            height: 10px;
+        }
+
+
+        .gradient-colors >.first {
+            background-color: #FF1414;
+            background: linear-gradient(90deg, #FF1414 0%, rgba(219, 255, 0, 0.37) 100%);
+        }
+        .gradient-colors > .second {
+            background-color: rgba(255, 92, 0, 0.74);
+            background: linear-gradient(270deg, rgba(255, 92, 0, 0.74) 0%, rgba(219, 255, 0, 0.44) 100%);
+        }
+        .gradient-colors > .third {
+            background-color: rgba(66, 255, 0, 0.17);
+            background: linear-gradient(90deg, rgba(255, 92, 0, 0.74) 4.17%, rgba(66, 255, 0, 0.17) 40.1%, rgba(0, 163, 255, 0.63) 100%);
+        }
+
+        .primeiro h2 {
+            
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 250px;
+        }
+
+        .primeiro h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 25px;
+        }
+
+        .prim p {
+            max-width: 700px;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 25px;
+        }
+
+        .sec p {
+            max-width: 700px;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 25px;
+        }
+
+        .terc h3 {
+            max-width: 700px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20;
+            margin-left: 25px;
+        }
+    
+
+        /* MOBILE */
+
+          @media (max-width: 750px){
+                .gradient-colors {
+                width: 200%;
+                /*margin-left: 10%;*/
+                padding: 0;
+                display: flex;
+                max-width: 750px;
+            }
+
+            .gradient-colors > div {
+                width: calc(100% / 3);
+                height: 10px;
+            }
+
+            .cabecalho{
+            height: 70px;
+            width: 750px;
+            background-color: rgb(243, 243, 243);
+            }
+            .cabecalho h2{
+                font-family: Arial, Helvetica, sans-serif;
+                display: flex;
+                margin-left: 31%;
+                padding-top: 1%;
+                color: #757575;
+            }
+
+        }
+         
+
+    </style>
+
+    
+    <row>
+        <div class="master">
+            <div class="logo">
+                <img src="https://online.sysprocard.com.br/Images/emails/logo.png">
+            </div>
+
+            <div class="cabecalho">
+                <h2>Retorno do seu pedido</h2>
+            </div>
+        </div>
+        <div class="gradient-colors"> 
+            <div class="first"></div>
+            <div class="second"></div>
+            <div class="third"></div>
+        </div>
+
+        <columns class="primeiro"> 
+            <h2> Olá, {{nome}} </h2> 
+            <h3> Neste momento ainda não conseguimos aprovar seu cartão Syspro.</h3> 
+        </columns>
+
+        <columns class="prim">
+
+            <p> Constantemente a Syspro realiza uma nova checagem no perfil do usuario. </p>
+            <p> Assim que pudermos, iremos te disponibilizar o nosso cartão. </p>
+
+        </columns>
+
+        <br></br>
+
+        <columns class="sec">
+            <p>Tem alguma dúvida? Entre em contato conosco pelo chat do app ou ligue (16) 2103-0090.</p>
+        </columns>
+
+        <br></br>
+
+        <columns class="terc">
+            <h3>Abraços,</h3>
+            <h3>Equipe Syspro</h3>
+        </columns>
+
+    </row>
+
+
+

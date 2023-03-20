@@ -82,6 +82,7 @@ class Mail {
           subject: email.subject,
           cc: email.cc?.split(';'),
           bcc: email.cco?.split(';'),
+          attachments: this._handleAttachments(email.attachments),
         });
       }
 
@@ -99,6 +100,22 @@ class Mail {
 
       return false;
     }
+  }
+
+  _handleAttachments(attachments) {
+    if (!attachments?.split(";")?.length) return [];
+
+    return attachments.split(";").reduce((acc, cur) => {
+      const filename = cur.split("\\").pop();
+
+      return [
+        ...acc,
+        {
+          filename,
+          path: cur,
+        },
+      ];
+    }, []);
   }
 }
 

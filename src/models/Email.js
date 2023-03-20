@@ -25,11 +25,15 @@ const Email = sequelize.define("emails", {
     defaultValue: 'envios@sysprocard.com.br',
   },
   cc: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: true,
   },
   cco: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  attachments: {
+    type: DataTypes.TEXT,
     allowNull: true,
   },
   subject: {

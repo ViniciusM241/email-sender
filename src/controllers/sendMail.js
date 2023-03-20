@@ -46,9 +46,11 @@ async function sendMail(data) {
 
   const template = getTemplate(data.template);
   const html = template(data.params);
+  const attachments = handleAttachments(data.params);
 
   await Email.create({
     html,
+    attachments: attachments?.join(";"),
     template: data.template,
     params: JSON.stringify(data.params),
     to: data.to,
@@ -60,6 +62,24 @@ async function sendMail(data) {
   });
 
   return { status: 201, message: 'E-mail criado com sucesso' };
+}
+
+function handleAttachments(params) {
+  if (!params.attachments) return null;
+  if (!params.attachments.length) return null;
+
+  const attachments = params.attachments.map(attachmentsPath => {
+    const dir = path.resolve(attachmentsPath);
+
+    if (!fs.existsSync(dir)) return false;
+    if (fs.existsSync(dir) && fs.lstatSync(dir).isDirectory()) return false;
+
+    return dir;
+  }).filter(Boolean);
+
+  if (!attachments.length) return null;
+
+  return attachments;
 }
 
 function handleParamsString(message) {

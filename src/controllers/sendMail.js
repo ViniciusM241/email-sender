@@ -65,8 +65,8 @@ async function sendMail(data) {
 }
 
 function handleAttachments(params) {
-  if (!params.attachments) return null;
-  if (!params.attachments.length) return null;
+  if (!params?.attachments) return null;
+  if (!params?.attachments?.length) return null;
 
   const attachments = params.attachments.map(attachmentsPath => {
     const dir = path.resolve(attachmentsPath);

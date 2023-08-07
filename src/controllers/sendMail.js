@@ -17,18 +17,29 @@ async function sendMailHTTP(req, res) {
 }
 
 async function sendMailWS(messageString) {
-  const data = handleParamsString(messageString);
-  const { status, message, errors } = await sendMail(data);
+  const messages = messageString.split("|");
+  const results = [];
 
-  if (status === 400) {
-    if (errors) {
-      return `ERRO: ${message}: ${errors.join(' ')}`;
+  for (const messageStr of messages) {
+    if (!messageStr) return false;
+
+    const data = handleParamsString(messageStr);
+    const { status, message, errors } = await sendMail(data);
+
+    if (status === 400) {
+      if (errors) {
+        results.push(`ERRO: ${message}: ${errors.join('; ')}`);
+
+        continue;
+      }
+
+      results.push(`ERRO: ${message}`);
+    } else {
+      results.push(`SUCESSO: ${message}`);
     }
-
-    return `ERRO: ${message}`;
-  } else {
-    return `SUCESSO: ${message}`;
   }
+
+  return results.filter(Boolean).join("|");
 }
 
 async function sendMail(data) {

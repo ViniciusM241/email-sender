@@ -32,12 +32,11 @@ function init() {
 
     async function onMessage(messageAsBuffer) {
       const message = messageAsBuffer.toString();
-      const _message = message.concat(`;ip=${ws.localAddress}`);
 
       log.write(`${new Date()} - WS: message ID:${id} - MESSAGE: ${message}`);
 
       try {
-        const res = await sendMailWS(_message);
+        const res = await sendMailWS(message, ws.localAddress);
 
         ws.write(res);
       } catch(err) {

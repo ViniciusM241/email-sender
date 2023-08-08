@@ -16,14 +16,15 @@ async function sendMailHTTP(req, res) {
   return res.status(status).json({ message, errors });
 }
 
-async function sendMailWS(messageString) {
+async function sendMailWS(messageString, ip) {
   const messages = messageString.split("|");
   const results = [];
 
   for (const messageStr of messages) {
     if (!messageStr) return false;
 
-    const data = handleParamsString(messageStr);
+    const _message = messageStr.concat(`;ip=${ip}`);
+    const data = handleParamsString(_message);
     const { status, message, errors } = await sendMail(data);
 
     if (status === 400) {
